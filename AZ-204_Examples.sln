@@ -3,15 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.809.10
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storage", "Storage", "{50D429F0-B397-45CE-9426-277DA7C92F2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queue", "Queue", "{FA457551-CEBB-4426-9CFA-59CDA6E4D066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueStorage", "QueueStorage\QueueStorage.csproj", "{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73603029-B81E-4514-87AE-67B5ABF39101}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA457551-CEBB-4426-9CFA-59CDA6E4D066} = {50D429F0-B397-45CE-9426-277DA7C92F2F}
+		{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A} = {FA457551-CEBB-4426-9CFA-59CDA6E4D066}
 	EndGlobalSection
 EndGlobal
