@@ -7,8 +7,8 @@ namespace QueueStorage
 {
     class Program
     {
-        private static readonly string connectionStr = "";
-        private static readonly string queueName = "";
+        private static readonly string connectionStr = "DefaultEndpointsProtocol=https;AccountName=storagericopegnata;AccountKey=HcT0CARsLLV5eKHQJju/V1+4W4NPw/znWQLqzJLs/dN6PfOZjJbqCHkWqaBW5dvJ6Hg/wlmlJdu3Exe9sfxzZA==;EndpointSuffix=core.windows.net";
+        private static readonly string queueName = "ricopegnataqueue";
 
         static void Main(string[] args)
         {
