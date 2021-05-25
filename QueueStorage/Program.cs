@@ -28,6 +28,19 @@ namespace QueueStorage
                         .GetAwaiter()
                         .GetResult();
                     break;
+
+                case 'p':
+                    if (int.TryParse(input[2..], out var nOfMessages))
+                    {
+                        PeakMessages(nOfMessages)
+                            .GetAwaiter()
+                            .GetResult();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Given input <{input[2..]}> is not a valid number");
+                    }
+                    break;
                 default:
                     Console.WriteLine("Given command is invalid, insert a valid input command");
                     PrintIntroMessages();
@@ -46,10 +59,25 @@ namespace QueueStorage
             Console.WriteLine($"New message added to the queue <{queueName}>, message: <{message}>");
         }
 
+        private static async Task PeakMessages(int numberOfMessages)
+        {
+            var queueClient = new QueueClient(connectionStr, queueName);
+
+            await queueClient.CreateIfNotExistsAsync();
+
+            var items = await queueClient.PeekMessagesAsync(numberOfMessages);
+
+            for(var i = 0; i < items.Value.Length; i++)
+            {
+                Console.WriteLine($"{i}: <{items.Value.ElementAt(i).MessageId}> <{items.Value.ElementAt(i).Body}>");
+            }
+        }
+
         private static void PrintIntroMessages()
         {
             Console.WriteLine("Type one of the following commands:");
             Console.WriteLine("\t n <message>: to add a new message");
+            Console.WriteLine("\t p <numberOfMessages>: to get first <numberOfMessages> messages");
         }
     }
 }
