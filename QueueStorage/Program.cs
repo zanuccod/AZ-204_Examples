@@ -70,8 +70,6 @@ namespace QueueStorage
             Console.WriteLine($"New message added to the queue <{queueName}>, message: <{message}>");
         }
 
-        // Peak, Read, Delete, Receive
-
         /// <summary>
         /// Read but leave on the queue the messages
         /// </summary>
