@@ -9,12 +9,13 @@ namespace WebApi.Services
 {
     public class BlobStorageService : IBlobStorageService
     {
-        private const string storageAccountConnectionStr = "DefaultEndpointsProtocol=https;AccountName=apimstoragetest;AccountKey=Fy6cRfdEt09GtBe7ylapN98WH5bCUZ088okjOfLICWDpwRcs0PGH5pNAp3xViVUjNIW4mP1YFShbJRrPSRZAGg==;EndpointSuffix=core.windows.net";
+        private readonly string storageAccountConnectionStr;
         private readonly ILogger logger;
 
         public BlobStorageService(ILogger logger)
         {
             this.logger = logger;
+            storageAccountConnectionStr = Environment.GetEnvironmentVariable("storageAccountConnectionStr");
         }
 
         public IEnumerator<BlobItem> GetFilesFromDataContainer()
