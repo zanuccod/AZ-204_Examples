@@ -25,20 +25,45 @@ namespace WebApi.Controllers
         [Route("get-blob-list")]
         public async Task<IActionResult> GetBlobListAsync()
         {
-            var blobs = await blobStorageService.GetFilesFromDataContainerAsync();
-            return Ok(new
+            try
             {
-                Count = blobs.Count(),
-                Items = blobs
-            });
+                logger.LogInformation("GetBlobListAsync start");
+
+                var blobs = await blobStorageService.GetFilesFromDataContainerAsync();
+
+                logger.LogInformation("blobStorageService.GetFilesFromDataContainerAsync completed");
+
+                return Ok(new
+                {
+                    Count = blobs.Count(),
+                    Items = blobs
+                });
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Failed to process end-point <{functionName}>", System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.Name);
+                return new ObjectResult($"Failed to process end-point <{System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.Name}>: {ex.Message}") { StatusCode = 500 };
+            }
         }
 
         [HttpGet]
         [Route("get-delete-file")]
         public async Task<IActionResult> GetDeleteObjFileAsync()
         {
-            var deleteObjFile = await blobStorageService.GetFileDataByFileNameAsync("DeleteBinObj.sh");
-            return Ok(deleteObjFile);
+            try
+            {
+                logger.LogInformation("GetDeleteObjFileAsync start");
+
+                var deleteObjFile = await blobStorageService.GetFileDataByFileNameAsync("DeleteBinObj.sh");
+                logger.LogInformation("blobStorageService.GetFileDataByFileNameAsync completed");
+
+                return Ok(deleteObjFile);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Failed to process end-point <{functionName}>", System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.Name);
+                return new ObjectResult($"Failed to process end-point <{System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.Name}>: {ex.Message}") { StatusCode = 500 };
+            }
         }
     }
 }
