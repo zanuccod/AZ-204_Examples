@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using Azure.Storage.Blobs.Models;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace WebApi.Services
 {
     public interface IBlobStorageService
     {
-        IEnumerator<BlobItem> GetFilesFromDataContainer();
-        string GetFileDataByFileName(string fileName);
+        Task<IEnumerable<string>> GetFilesFromDataContainerAsync();
+        Task<string> GetFileDataByFileNameAsync(string fileName);
     }
 }

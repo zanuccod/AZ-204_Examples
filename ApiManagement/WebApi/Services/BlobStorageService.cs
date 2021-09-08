@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
 using Microsoft.Extensions.Logging;
 
 namespace WebApi.Services
@@ -12,29 +11,36 @@ namespace WebApi.Services
         private readonly string storageAccountConnectionStr;
         private readonly ILogger logger;
 
-        public BlobStorageService(ILogger logger)
+        public BlobStorageService(ILogger<BlobStorageService> logger)
         {
             this.logger = logger;
             storageAccountConnectionStr = Environment.GetEnvironmentVariable("storageAccountConnectionStr");
         }
 
-        public IEnumerator<BlobItem> GetFilesFromDataContainer()
+        public async Task<IEnumerable<string>> GetFilesFromDataContainerAsync()
         {
             var blobServiceClient = new BlobServiceClient(storageAccountConnectionStr);
             var blobContainer = blobServiceClient.GetBlobContainerClient("data");
 
-            return blobContainer
-                .GetBlobs()
-                .GetEnumerator();
+            var items = blobContainer
+                .GetBlobsAsync()
+                .GetAsyncEnumerator();
+
+            var tmp = new List<string>();
+            while (await items.MoveNextAsync())
+            {
+                tmp.Add(items.Current.Name);
+            }
+            return tmp;
         }
 
-        public string GetFileDataByFileName(string fileName)
+        public async Task<string>GetFileDataByFileNameAsync(string fileName)
         {
             var blobServiceClient = new BlobServiceClient(storageAccountConnectionStr);
             var blobContainer = blobServiceClient.GetBlobContainerClient("data");
             var blobClient = blobContainer.GetBlobClient(fileName);
 
-            var file = blobClient.DownloadContent();
+            var file = await blobClient.DownloadContentAsync();
             return file.Value.Content.ToString();
         }
     }

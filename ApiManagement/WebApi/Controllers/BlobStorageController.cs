@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using System.Text.Json;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApi.Services;
@@ -12,23 +15,29 @@ namespace WebApi.Controllers
         private readonly IBlobStorageService blobStorageService;
         private readonly ILogger logger;
 
-        public BlobStorageController(IBlobStorageService blobStorageService, ILogger logger)
+        public BlobStorageController(IBlobStorageService blobStorageService, ILogger<BlobStorageController> logger)
         {
             this.blobStorageService = blobStorageService;
             this.logger = logger;
         }
 
         [HttpGet]
-        public IActionResult GetBlobList()
+        [Route("get-blob-list")]
+        public async Task<IActionResult> GetBlobListAsync()
         {
-            var blobs = blobStorageService.GetFilesFromDataContainer();
-            return Ok(blobs);
+            var blobs = await blobStorageService.GetFilesFromDataContainerAsync();
+            return Ok(new
+            {
+                Count = blobs.Count(),
+                Items = blobs
+            });
         }
 
         [HttpGet]
-        public IActionResult GetDeleteObjFile()
+        [Route("get-delete-file")]
+        public async Task<IActionResult> GetDeleteObjFileAsync()
         {
-            var deleteObjFile = blobStorageService.GetFileDataByFileName("DeleteBinObj.sh");
+            var deleteObjFile = await blobStorageService.GetFileDataByFileNameAsync("DeleteBinObj.sh");
             return Ok(deleteObjFile);
         }
     }
