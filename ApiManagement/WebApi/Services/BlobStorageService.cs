@@ -34,7 +34,7 @@ namespace WebApi.Services
             return tmp;
         }
 
-        public async Task<string>GetFileDataByFileNameAsync(string fileName)
+        public async Task<string> GetFileDataByFileNameAsync(string fileName)
         {
             var blobServiceClient = new BlobServiceClient(storageAccountConnectionStr);
             var blobContainer = blobServiceClient.GetBlobContainerClient("data");

@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queue", "Queue", "{FA457551
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueStorage", "QueueStorage\QueueStorage.csproj", "{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiManagement", "ApiManagement", "{FA6828A7-695A-414B-830A-6670C49D00F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "ApiManagement\WebApi\WebApi.csproj", "{4EE507AD-14E6-4318-BC40-D184E638224D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,10 @@ Global
 		{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE507AD-14E6-4318-BC40-D184E638224D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE507AD-14E6-4318-BC40-D184E638224D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE507AD-14E6-4318-BC40-D184E638224D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE507AD-14E6-4318-BC40-D184E638224D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -29,5 +37,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FA457551-CEBB-4426-9CFA-59CDA6E4D066} = {50D429F0-B397-45CE-9426-277DA7C92F2F}
 		{BDFDCCC7-007C-4ED2-B47C-5F9CB9E59C9A} = {FA457551-CEBB-4426-9CFA-59CDA6E4D066}
+		{4EE507AD-14E6-4318-BC40-D184E638224D} = {FA6828A7-695A-414B-830A-6670C49D00F6}
 	EndGlobalSection
 EndGlobal

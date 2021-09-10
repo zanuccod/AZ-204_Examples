@@ -5,19 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.10.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Controllers\" />
     <None Remove="Services\" />
-    <None Remove="Azure.Storage.Blobs" />
-    <None Remove="Swashbuckle.AspNetCore.Swagger" />
-    <None Remove="Swashbuckle.AspNetCore.SwaggerGen" />
-    <None Remove="Swashbuckle.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.9.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.1" />
   </ItemGroup>
 </Project>
