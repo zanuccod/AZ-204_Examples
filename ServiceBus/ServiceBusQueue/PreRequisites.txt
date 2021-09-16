@@ -1,0 +1,36 @@
+﻿1. Create a ServiceBus resource on Azure portal
+
+    - az login
+    - az group create -n ServiceBusTest -l switzerlandnorth
+    - az servicebus namespace create -g ServiceBusTest -n namespacericopegnata -l switzerlandnorth              # create a ServiceBus namespace
+    - az servicebus queue create -g ServiceBusTest --namespace-name namespacericopegnata -n queuericopegnata    # create a ServiceBus queue
+
+2. Create a keyVault to store the service bus connections strings
+    - az keyvault create -g ServiceBusTest -n keyvaultricopegnata -l switzerlandnorth
+
+3. Add an application to Azure AD
+    - add an application to retrieve TENNANT_ID and CLIENT_ID for clientCredentials auth
+    - create a CLIENT_SECRET for Sender and one for Receiver on the previous app created on Azure AD
+
+4. Add an AccessPolicy to the KeyVault for the previous created app on AAD
+
+4. Create Sender and Receiver Shared Access Policies on the previous created ServiceBus queue
+    - on Shared Access Policies create a new policy with name "SendPolicy" and SEND permission and retrieve the connection string
+    - on Shared Access Policies create a new policy with name "ListenPolicy" and LISTEN permission and retrieve the connection string
+
+5. Add the previous connections strings to Azure Key Vault Secrets
+
+2. Package to be used on Net console app:
+    - Azure.Messaging.ServiceBus
+    - Azure.Security.KeyVault.Secrets
+    - Azure.Identity
+
+
+SENDER: Endpoint=sb://namespacericopegnata.servicebus.windows.net/;SharedAccessKeyName=SendPolicy;SharedAccessKey=yN0IHXlUvZCNJ7E5LV/JoY7yLSjWbsITATLjrI7KD5Q=
+Receiver: Endpoint=sb://namespacericopegnata.servicebus.windows.net/;SharedAccessKeyName=ListenPolicy;SharedAccessKey=ZokvtU9BZykco0BCAbzGseb1+Y9rM3fQY/CuUug0PPs=
+
+
+ClientID fca738e9-37f4-4a07-b335-8e1e66a5c977
+TennantID b00367e2-193a-4f48-94de-7245d45c0947
+SenderSecret Zz17Q~cNrmuOi_1pbEDbMQJ6AR1L5iSb2KNin
+ReceiverSecret C5q7Q~JxrnZPKP9NHHFEUwBnTip4cpJw4r5qM

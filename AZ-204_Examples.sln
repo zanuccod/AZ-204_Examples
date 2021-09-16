@@ -25,6 +25,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sender", "EventHub\Sender\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reader", "EventHub\Reader\Reader.csproj", "{2A2B5B03-5E31-48D0-B7AD-AB7DA90B9BF9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBus", "ServiceBus", "{06504175-1243-44D5-9B12-6343186B982C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBusQueue", "ServiceBusQueue", "{A7251675-81BF-4857-8EE4-342E1E86EA2E}"
+	ProjectSection(SolutionItems) = preProject
+		ServiceBus\ServiceBusQueue\PreRequisites.txt = ServiceBus\ServiceBusQueue\PreRequisites.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QueueStorage", "QueueStorage", "{0AB8AD03-BCAF-434A-A152-63F2C6548480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusQueueSender", "ServiceBus\ServiceBusQueue\ServiceBusQueueSender\ServiceBusQueueSender.csproj", "{624453F4-6812-46A5-9550-969F90FB8D4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBusQueueReceiver", "ServiceBus\ServiceBusQueue\ServiceBusQueueReceiver\ServiceBusQueueReceiver.csproj", "{8047B58B-7B54-47BA-BECE-842833AC69BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +68,14 @@ Global
 		{2A2B5B03-5E31-48D0-B7AD-AB7DA90B9BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A2B5B03-5E31-48D0-B7AD-AB7DA90B9BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A2B5B03-5E31-48D0-B7AD-AB7DA90B9BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{624453F4-6812-46A5-9550-969F90FB8D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624453F4-6812-46A5-9550-969F90FB8D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624453F4-6812-46A5-9550-969F90FB8D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624453F4-6812-46A5-9550-969F90FB8D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8047B58B-7B54-47BA-BECE-842833AC69BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8047B58B-7B54-47BA-BECE-842833AC69BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8047B58B-7B54-47BA-BECE-842833AC69BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8047B58B-7B54-47BA-BECE-842833AC69BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,5 +91,9 @@ Global
 		{B272BBC7-7016-4D0B-B47F-38A382068F7D} = {6EC56F83-DF88-4625-B423-D67769DFE09D}
 		{A6638C90-8016-4A03-A81E-BA13CF385A93} = {9FD09228-E45C-4371-8E60-7267BD785573}
 		{2A2B5B03-5E31-48D0-B7AD-AB7DA90B9BF9} = {9FD09228-E45C-4371-8E60-7267BD785573}
+		{A7251675-81BF-4857-8EE4-342E1E86EA2E} = {06504175-1243-44D5-9B12-6343186B982C}
+		{0AB8AD03-BCAF-434A-A152-63F2C6548480} = {06504175-1243-44D5-9B12-6343186B982C}
+		{624453F4-6812-46A5-9550-969F90FB8D4B} = {A7251675-81BF-4857-8EE4-342E1E86EA2E}
+		{8047B58B-7B54-47BA-BECE-842833AC69BA} = {A7251675-81BF-4857-8EE4-342E1E86EA2E}
 	EndGlobalSection
 EndGlobal
