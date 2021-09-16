@@ -12,11 +12,11 @@ namespace ServiceBusQueueSender
      */
     public class Program
     {
-        private const string TENNANT_ID = "b00367e2-193a-4f48-94de-7245d45c0947";
-        private const string CLIENT_ID = "fca738e9-37f4-4a07-b335-8e1e66a5c977";
-        private const string CLIENT_SECRET = "Zz17Q~cNrmuOi_1pbEDbMQJ6AR1L5iSb2KNin";
+        private const string TENNANT_ID = "";
+        private const string CLIENT_ID = "";
+        private const string CLIENT_SECRET = "";
 
-        private const string KEY_VAULT_URL = "https://keyvaultricopegnata.vault.azure.net/";
+        private const string KEY_VAULT_URL = "";
         private const string SENDER_CON_STR_KEY_NAME = "Sender";
         private const string QUEUE_NAME = "queuericopegnata";
 

@@ -17,11 +17,11 @@ namespace KeyVault
      */
     public class Program
     {
-        private const string TENNANT_ID = "b00367e2-193a-4f48-94de-7245d45c0947";
-        private const string CLIENT_ID = "b5f53607-b6a2-42e6-b38c-e16c95ea1219";
-        private const string CLIENT_SECRET = "3VH~d740yvrU~K1xZxrwpl3l37E8~1b.ZY";
+        private const string TENNANT_ID = "";
+        private const string CLIENT_ID = "";
+        private const string CLIENT_SECRET = "";
 
-        private const string KEY_VAULT_URL = "https://keyvaulttestricopegnata.vault.azure.net/";
+        private const string KEY_VAULT_URL = "";
 
         static async Task Main(string[] args)
         {

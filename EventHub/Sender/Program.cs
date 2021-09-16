@@ -27,11 +27,11 @@ namespace Sender
      */
     public class Program
     {
-        private const string TENNANT_ID = "b00367e2-193a-4f48-94de-7245d45c0947";
-        private const string CLIENT_ID = "dac36c36-9b51-4b47-86b7-3d5e62c5f8d3";
-        private const string CLIENT_SECRET = ".aZgOw.-Zm88xZd-Vs3.wdr2VKXQ_tA4kf";
+        private const string TENNANT_ID = "";
+        private const string CLIENT_ID = "";
+        private const string CLIENT_SECRET = "";
 
-        private const string KEY_VAULT_URL = "https://eventhubvaultricopegnata.vault.azure.net/";
+        private const string KEY_VAULT_URL = "";
         private const string SENDER_CON_STR_KEY_NAME = "SenderConnectionString";
 
         public static async Task Main(string[] args)

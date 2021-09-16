@@ -9,8 +9,8 @@ namespace GetTokenFromAAD
     public class Program
     {
         // data defined on App Registration on AAD
-        private const string TENNANT_ID = "b00367e2-193a-4f48-94de-7245d45c0947";
-        private const string CLIENT_ID = "b5f53607-b6a2-42e6-b38c-e16c95ea1219";
+        private const string TENNANT_ID = "";
+        private const string CLIENT_ID = "";
         private const string REDIRECT_URI = "http://localhost";
 
         public static async Task Main(string[] args)
