@@ -25,12 +25,3 @@
     - Azure.Security.KeyVault.Secrets
     - Azure.Identity
 
-
-SENDER: Endpoint=sb://namespacericopegnata.servicebus.windows.net/;SharedAccessKeyName=SendPolicy;SharedAccessKey=yN0IHXlUvZCNJ7E5LV/JoY7yLSjWbsITATLjrI7KD5Q=
-Receiver: Endpoint=sb://namespacericopegnata.servicebus.windows.net/;SharedAccessKeyName=ListenPolicy;SharedAccessKey=ZokvtU9BZykco0BCAbzGseb1+Y9rM3fQY/CuUug0PPs=
-
-
-ClientID fca738e9-37f4-4a07-b335-8e1e66a5c977
-TennantID b00367e2-193a-4f48-94de-7245d45c0947
-SenderSecret Zz17Q~cNrmuOi_1pbEDbMQJ6AR1L5iSb2KNin
-ReceiverSecret C5q7Q~JxrnZPKP9NHHFEUwBnTip4cpJw4r5qM
