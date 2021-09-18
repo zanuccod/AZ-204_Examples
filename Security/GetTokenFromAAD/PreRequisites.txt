@@ -1,0 +1,9 @@
+﻿1. To create PublicClientApplicationBuilder (mobile app, desktop app)
+    Add an application to Azure AD
+    - add an application to retrieve TENNANT_ID and CLIENT_ID for clientCredentials auth
+    - create a CLIENT_SECRET for Sender and one for Receiver on the previous app created on Azure AD
+
+2. To create ConfidentialClientApplicationBuilder (app stored on Azure)
+    Add an application to Azure AD
+    - add an application to retrieve TENNANT_ID and CLIENT_ID for clientCredentials auth
+    - create a CLIENT_SECRET for Sender and one for Receiver on the previous app created on Azure AD
